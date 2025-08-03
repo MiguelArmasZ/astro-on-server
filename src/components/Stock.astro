@@ -1,5 +1,6 @@
 ---
-const { stock } = Astro.props;
+const a = await fetch("http://localhost:3000");
+const b = await a.json();
 ---
 
-<span>stock: {stock}</span>
+<span>stock: {b.stock}</span>
