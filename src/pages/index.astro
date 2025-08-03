@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const products = await getCollection("products");
+export const prerender = true;
 ---
 
 <Layout>
