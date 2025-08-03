@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  products: CollectionEntry<"products">[];
+}
+
+const { products } = Astro.props;
+---
+
+<ul>
+  {
+    products.map(({ data }) => {
+      return (
+        <li>
+          <h3>{data.name}</h3>
+          <Image src={data.cover} alt="" />
+          <p>{data.description}</p>
+          <a href="/">ver perro</a>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h3 {
+    font-size: var(--fs-xl);
+  }
+
+  a {
+    background-color: var(--primary);
+    padding: 1rem;
+    border-radius: var(--radius);
+    color: var(--white);
+  }
+</style>
