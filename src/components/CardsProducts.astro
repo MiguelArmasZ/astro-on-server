@@ -23,7 +23,7 @@ const b = await a.json();
           <h3>{data.name}</h3>
           <img src={data.cover.src} alt="" />
           <p>{data.description}</p>
-          <Stock server:defer stock={b.stock} />
+          <Stock stock={b.stock} />
           <a href="/">ver perro</a>
         </li>
       );
