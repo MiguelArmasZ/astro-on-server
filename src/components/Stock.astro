@@ -1,6 +1,8 @@
 ---
-const a = await fetch("http://localhost:3000");
+const a = await fetch(
+  "http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=5"
+);
 const b = await a.json();
 ---
 
-<span>stock: {b.stock}</span>
+<span>stock: {b[0]}</span>
