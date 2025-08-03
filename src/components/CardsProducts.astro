@@ -12,7 +12,7 @@ const { products } = Astro.props;
 const a = await fetch("http://localhost:3000");
 const b = await a.json();
 
-// export const prerender = true;
+export const prerender = true;
 ---
 
 <ul>
