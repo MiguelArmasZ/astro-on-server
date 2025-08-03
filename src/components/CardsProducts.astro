@@ -7,6 +7,11 @@ interface Props {
 }
 
 const { products } = Astro.props;
+
+const a = await fetch("http://localhost:3000");
+const b = await a.json();
+
+console.log(b);
 ---
 
 <ul>
@@ -17,6 +22,7 @@ const { products } = Astro.props;
           <h3>{data.name}</h3>
           <Image src={data.cover} alt="" />
           <p>{data.description}</p>
+          <span>stock: {b.stock}</span>
           <a href="/">ver perro</a>
         </li>
       );
