@@ -3,8 +3,6 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Stock from "./Stock.astro";
 
-export const prerender = true;
-
 interface Props {
   products: CollectionEntry<"products">[];
 }
@@ -14,7 +12,7 @@ const { products } = Astro.props;
 const a = await fetch("http://localhost:3000");
 const b = await a.json();
 
-console.log(b);
+export const prerender = true;
 ---
 
 <ul>
